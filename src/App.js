@@ -1,13 +1,17 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+
 function App() {
+  console.log(process.env.REACT_APP_BOOK_FINDER_API_KEY)
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        
+
+
         Hugo
+        good
+
       </header>
     </div>
   );
