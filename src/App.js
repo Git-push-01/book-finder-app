@@ -11,7 +11,7 @@ const App = () => {
   };
   const fetchBooks = async () => {
     // Ajax call to API using Axios
-    const result = await axios.get(`${API_URL}?q=${searchTerm}`);
+    const result = await axios.get(`${API_URL}?q=${searchTerm}&orderBy=newest&key=${process.env.REACT_APP_BOOK_FINDER_API_KEY}`);
     // Books result
     console.log(result.data);
   };
@@ -22,7 +22,6 @@ const App = () => {
     fetchBooks();
   };
 
-  console.log(process.env.REACT_APP_BOOK_FINDER_API_KEY);
 
   return (
     <section>
@@ -31,7 +30,7 @@ const App = () => {
           <span>Search for books</span>
           <input
             type="search"
-            placeholder="microservice, restful design, etc.,"
+
             value={searchTerm}
             onChange={onInputChange}
           />
